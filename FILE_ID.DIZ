@@ -1,0 +1,12 @@
+LDAP SDK for OS/2 based on OpenLDAP 2.0.15.
+(Lightweight Directory Access Protocol) A
+protocol used to access a directory listing.
+LDAP support is being implemented in Web
+browsers and e-mail programs, which can
+query an LDAP-compliant directory. It is
+expected that LDAP will provide a common
+method for searching e-mail addresses on
+the Internet, eventually leading to a
+global white pages. LDAP is a sibling
+protocol to HTTP and FTP and uses the
+ldap:// prefix in its URL.

@@ -1,0 +1,57 @@
+LDAP SDK for OS/2 0.00
+based on OpenLDAP 2.0.15 (http://www.openldap.com)
+
+YANO Takashi (tyano@tk.airnet.ne.jp)
+
+History:
+2001-11-16 0.00: Initial release
+
+files:
+h/ include files for OS/2
+lib/ static and import library files for OS/2
+   liblldap.lib (static link library for IBM VisualAge C/C++ 3.0)
+   libllber.lib (static link library for IBM VisualAge C/C++ 3.0)
+   liblldif.lib (static link library for IBM VisualAge C/C++ 3.0)
+   ldapdll.lib   (import library to use with IBM TCP/IP 4.0)
+   ldapdll41.lib (import library to use with IBM TCP/IP 4.1)
+dll/ dynamic library files for OS/2
+   ldapdll.dll   (dynamic link library to use with IBM TCP/IP 4.0)
+   ldapdll41.dll (dynamic link library to use with IBM TCP/IP 4.1)
+src/ modified SDK *.c files for OS/2
+include/ OpenLDAP 2.0.15 source tree's (no change)
+libraries/ OpenLDAP 2.0.15 source tree's (no change)
+doc/ OpenLDAP 2.0.15 source tree's (no change)
+makefile
+build.cmd
+ldapdll.def
+ldapdll41.def
+
+How to use:
+icc -C -Gm -I\ldapsdl\h yourprog.c
+icc yourprog.obj libldap.lib liblber.lib libldif.lib tcp32dll.lib so32dll.lib
+icc yourprog.obj ldapdll.lib
+icc yourprog.obj ldapdll41.lib
+
+Note:
+OS/2 Warp 4 and later OS/2s have TCP/IP 4.0 runtime.
+OS/2 Warp Server for e-business and later OS/2s have TCP/IP 4.1 runtime.
+If you want for your LDAP programs to work on any OS/2s, I recommend you to use
+ldapdll.lib or libldap.lib/liblber.lib/libldif.lib.
+The programs linked with ldapdll.lib must work with ldapdll.dll.
+The programs linked with ldapdll41.lib must work with ldapdll41.dll.
+
+How to build:
+
+build clean
+clean up files
+
+build tcpip41
+build ldapdll41.dll and ldapdll41.lib
+
+build tcpip40
+build ldapdll.dll and ldapdll.lib
+
+build
+build libldap.lib and liblber.lib and libldif.lib
+
+
